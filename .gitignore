@@ -1,0 +1,13 @@
+# Python
+api/.venv/
+__pycache__/
+.pytest_cache/
+# Node
+web/node_modules/
+web/.next/
+web/out/
+web/test-results/
+web/playwright-report/
+web/tsconfig.tsbuildinfo
+.env*.local
+.env
