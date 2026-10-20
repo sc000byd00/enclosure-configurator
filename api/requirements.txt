@@ -1,0 +1,5 @@
+pcb-enclosure-generator @ git+https://github.com/sc000byd00/pcb-enclosure-generator@8000eaf72913430f34fe22ee0e15a805248e6d93
+fastapi==0.151.0
+uvicorn[standard]==0.54.0
+python-multipart==0.0.32
+pyyaml>=6
