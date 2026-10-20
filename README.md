@@ -17,8 +17,8 @@ A web front end for [pcb-enclosure-generator](https://github.com/sc000byd00/pcb-
 ## Architecture
 
 ```
-web/  Next.js (TypeScript), react-three-fiber viewer        -> static site, e.g. Vercel
-api/  FastAPI around the generator (build123d, Python)        -> container, e.g. Hugging Face Space
+web/  Next.js (TypeScript), react-three-fiber viewer        -> static site, GitHub Pages
+api/  FastAPI around the generator (build123d, Python)        -> container, Hugging Face Space
 ```
 
 The browser sends the board as JSON to `POST /api/build`. The API validates it, builds the enclosure in a separate process with a time limit, and returns the checks and a list of part meshes. Results are cached on disk by a hash of the input, so the same board is built once.
@@ -73,8 +73,10 @@ The end-to-end tests run against the Next.js app with the API mocked, so they ne
 
 ## Deploy
 
-- **API:** the `api/` folder is a complete Docker image (`api/Dockerfile`, port 7860). For a Hugging Face Space, create a Docker Space and push the contents of `api/` with a README that has `sdk: docker` and `app_port: 7860` in its front matter; set `ALLOWED_ORIGINS` to the web address.
-- **Web:** import `web/` into Vercel (root directory `web`), set `NEXT_PUBLIC_API_URL` to the API address.
+Live demo: **https://sc000byd00.github.io/enclosure-configurator/** (the first build after a pause can take a minute while the free API container wakes up).
+
+- **Web:** the app is fully client-side and exported as static files (`output: "export"`). The `Pages` workflow builds it with `BASE_PATH=/enclosure-configurator` and the API address, and publishes `web/out` to GitHub Pages.
+- **API:** `api/Dockerfile` is a complete image (port 7860). The demo runs as a Hugging Face Docker Space whose Dockerfile clones this repository at a fixed commit and installs `api/`; `ALLOWED_ORIGINS` there allows the Pages address.
 
 ## License
 
