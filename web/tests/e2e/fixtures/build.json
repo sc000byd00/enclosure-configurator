@@ -1,0 +1,18 @@
+{
+  "id": "0123456789abcdef01234567",
+  "name": "m",
+  "title": "M: ESP32 sensor node 70 x 50",
+  "outside": [75.4, 55.0, 24.1],
+  "passed": true,
+  "notes": [],
+  "checks": [
+    {"id": "walls", "ok": true, "message": "wall 2, floor 2, lid 2 mm (min 1.6)"},
+    {"id": "hook-strain", "ok": true, "message": "snap hooks: L 9.2 mm, t 1.2, deflection 0.75 mm -> strain 1.60 % (limit 2.0 %, PETG)"},
+    {"id": "hook-forces", "ok": null, "message": "assembly 4 x 5.3 = 21 N, removal 4 x 9.3 = 37 N"}
+  ],
+  "parts": [
+    {"name": "base", "role": "base", "url": "/api/files/0123456789abcdef01234567/base.stl"},
+    {"name": "lid", "role": "lid", "url": "/api/files/0123456789abcdef01234567/lid.stl"}
+  ],
+  "download": "/api/files/0123456789abcdef01234567/enclosure.zip"
+}

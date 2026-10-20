@@ -1,0 +1,39 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+.list li {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.tag {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  min-width: 42px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.pass .tag {
+  background: #d8f3e2;
+  color: #17643a;
+}
+.fail .tag {
+  background: #fbdcdc;
+  color: #9b1c1c;
+}
+.fail {
+  color: #9b1c1c;
+}
+.info .tag,
+.note .tag {
+  background: var(--line);
+  color: var(--muted);
+}
