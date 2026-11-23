@@ -78,6 +78,10 @@ Live demo: **https://sc000byd00.github.io/enclosure-configurator/** (the first b
 - **Web:** the app is fully client-side and exported as static files (`output: "export"`). The `Pages` workflow builds it with `BASE_PATH=/enclosure-configurator` and the API address, and publishes `web/out` to GitHub Pages.
 - **API:** `api/Dockerfile` is a complete image (port 7860). The demo runs as a Hugging Face Docker Space whose Dockerfile clones this repository at a fixed commit and installs `api/`; `ALLOWED_ORIGINS` there allows the Pages address.
 
+## Custom enclosures
+
+If your board needs something the generator doesn't cover, I also design [custom PCB enclosures](https://www.fiverr.com/helandis/design-a-3d-printable-enclosure-for-your-pcb-esp32-or-arduino-project). You get digital files; printing and shipping are not included.
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
